@@ -3,9 +3,16 @@ import pathlib
 from PIL import Image
 import google.generativeai as genai
 import streamlit.components.v1 as components
+from dotenv import load_dotenv
+import os
+
+# Load the .env file
+load_dotenv()
+
+# Get the API key from the environment variables
+API_KEY = os.getenv('API_KEY')
 
 # Configure the API key directly in the script
-API_KEY = 'AIzaSyDRvvhqsC5DcKIpebZHlOIJJB_jYs5jPa0'
 genai.configure(api_key=API_KEY)
 
 # Generation configuration
